@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'helveticaneuethin';
+    src: url('helveticaneue_thin.woff2') format('woff2'),
+         url('helveticaneue_thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaneuelight';
+    src: url('helveticaneue_light.woff2') format('woff2'),
+         url('helveticaneue_light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaneueregular';
+    src: url('helveticaneue.woff2') format('woff2'),
+         url('helveticaneue.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaneuemedium';
+    src: url('helveticaneue_medium.woff2') format('woff2'),
+         url('helveticaneue_medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaneueitalic';
+    src: url('helveticaneueit.woff2') format('woff2'),
+         url('helveticaneueit.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'helveticaneuethin', sans-serif;
+}
+
+#proyectos-menu {
+    display: none;
+}
+
+#proyectos-menu.visible {
+    display: block; 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+    .contact {
+        position: static;
+        text-align: center;
+        padding: 10px;
+    }
+}

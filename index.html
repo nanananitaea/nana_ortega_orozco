@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana Ortega Orozco</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Establecer la fuente personalizada */
+        @font-face {
+            font-family: 'pp_museumlight';
+            src:  url('ppmuseum-light-webfont.woff2') format('woff2'),
+                  url('ppmuseum-light-webfont.woff') format('woff');
+            font-weight: 100;  
+            font-style: normal;
+        }
+
+        /* Estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #fffffe;
+            color: #000;
+            font-family: 'pp_museumlight', sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* Estilos de la navegación */
+        .sidebar {
+            position: fixed;
+            left: 35px;
+            top: 115px;
+            width: 200px;
+            z-index: 12;
+            line-height: 1.8em;
+            font-size: 12px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Submenú oculto por defecto */
+        .submenu ul {
+            display: none;
+            padding-left: 20px;
+        }
+
+        /* Estilos del contacto */
+        .contact {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Estilos de la sección de bienvenida */
+        .welcome {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .welcome img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+         
+        /* Estilos de la fototeca */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .welcome img:hover {
+            transform: scale(1.05);
+        }
+       
+        /* Estilos de los proyectos */
+        .project {
+            display: none;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .project img {
+            max-width: 80%;
+            height: auto;
+            margin: 10px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+          .project {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project {
+            font-weight: normal; /* Eliminar negrita */
+            margin-bottom: 10px;
+        }
+
+        .project h1,
+        .project h3 {
+            font-weight: normal; /* Eliminar negrita de los títulos */
+        }
+
+        .project {
+            text-align: left;
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+
+
+        /* Ocultar CV por defecto */
+        .cv-content {
+            display: none;
+            text-align: left;
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+
+        /* Estilo para el CV sin viñetas ni negritas */
+        .cv-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .cv-content li {
+            font-weight: normal; /* Eliminar negrita */
+            margin-bottom: 10px;
+        }
+
+        .cv-content h1,
+        .cv-content h3 {
+            font-weight: normal; /* Eliminar negrita de los títulos */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contact">
+            <p>Nana Ortega Orozco</p>
+            <p>nana.ortegaorozco@gmail.com</p>
+            <p><a href="https://www.instagram.com/_nana_ortegaorozco/" target="_blank" rel="noopener noreferrer">@_nana_ortegaorozco</a></p>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html">FOTOTECA</a></li>
+                <li class="submenu">
+                    <a href="#" id="work-toggle">PROYECTOS</a>
+                    <ul id="proyectos-menu">
+                        <li><a href="#" class="project-link" data-project="lubdub lubdub">lubdub lubdub</a></li>
+                        <li><a href="#" class="project-link" data-project="lo que aquí reza">lo que aquí reza</a></li>
+                        <li><a href="#" class="project-link" data-project="it ain't much but it's nest">it ain't much but it's nest</a></li>
+                        <li><a href="#" class="project-link" data-project="tríada">tríada</a></li>
+                        <li><a href="#" class="project-link" data-project="aprender de las camadas">aprender de las camadas</a></li>
+                        <li><a href="#" class="project-link" data-project="espuertas siamesas">espuertas siamesas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="cv-btn">CV</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+            <section id="home" class="gallery">
+                <img src="img/fototeca/bernd_lohaus.jpeg" alt="Imagen 1">
+                <img src="img/fototeca/bill_woodrow_ii.jpeg" alt="Imagen 2">
+                <img src="img/fototeca/bill_woodrow.jpeg" alt="Imagen 3">
+                <img src="img/fototeca/boquillas_de_adriana_sobre_la_mano.jpeg" alt="Imagen 4">
+                <img src="img/fototeca/candela.jpeg" alt="Imagen 5">
+                <img src="img/fototeca/carton_marcado_de_suelo.jpeg" alt="Imagen 6">
+                <img src="img/fototeca/cinco_problemas_de_gabriel_orozco.jpeg" alt="Imagen 7">
+                <img src="img/fototeca/corona_para_sofia_con_pieza_de_eulalia_rovira.jpeg" alt="Imagen 8">
+                <img src="img/fototeca/C_haciendo_molde_de_un_bolardo_junto_al_rio_escalda.jpeg" alt="Imagen 9">
+                <img src="img/fototeca/C_señala_a_Cy_Twombly.jpeg" alt="Imagen 10">
+                <img src="img/fototeca/C_tirada_en_el_suelo_del_CAAC_de_Sevilla.jpeg" alt="Imagen 11">
+                <img src="img/fototeca/debajo_de_la_mesa_de_estudio_de_manders_en_bruselas.jpeg" alt="Imagen 12">
+                <img src="img/fototeca/el_ritmo_es_ritmo.jpeg" alt="Imagen 13">
+                <img src="img/fototeca/fischli_y_weiss_ii.jpeg" alt="Imagen 14">
+                <img src="img/fototeca/fischli_y_weiss.jpeg" alt="Imagen 15">
+                <img src="img/fototeca/foto_de_la_foto_de_isabel_de_la_pieza_de_roni.jpeg" alt="Imagen 16">
+                <img src="img/fototeca/ex-font_font.jpeg" alt="Imagen 17">
+                <img src="img/fototeca/en_la_calle_de_la_bola.jpeg" alt="Imagen 18">
+                <img src="img/fototeca/gabriel_orozco.jpeg" alt="Imagen 19">
+                <img src="img/fototeca/habitacion_sin_ventanas.jpg" alt="Imagen 20">
+                <img src="img/fototeca/huevos_siameses_sobre_la_mano.JPG" alt="Imagen 21">
+                <img src="img/fototeca/huevo_lijado_sobre_la_mano.jpeg" alt="Imagen 22">
+                <img src="img/fototeca/imagen_artificial_mezclando_fotos_de_por_aqui_adivina_cual.jpeg" alt="Imagen 23">
+                <img src="img/fototeca/Joe_Scanlan_documenta.jpeg" alt="Imagen 24">
+                <img src="img/fototeca/la_caida_de_los_angeles_rebeldes.jpeg" alt="Imagen 25">
+                <img src="img/fototeca/la_cigüeña.jpeg" alt="Imagen 26">
+                <img src="img/fototeca/la_mitad_de_mi_mano_tapando_a_bill_woodrow.jpeg" alt="Imagen 27">
+                <img src="img/fototeca/la_ola_en_la_mente_sobre_la_cabeza.jpeg" alt="Imagen 28">
+                <img src="img/fototeca/lechuga_contra_lechuga.jpg" alt="Imagen 29">
+                <img src="img/fototeca/luz_del_sol_en_la_punta_de_los_dedos.jpeg" alt="Imagen 30">
+                <img src="img/fototeca/lygia_clark.jpeg" alt="Imagen 31">
+                <img src="img/fototeca/manders_en_bruselas.jpeg" alt="Imagen 32">
+                <img src="img/fototeca/manders.jpeg" alt="Imagen 33">
+                <img src="img/fototeca/manos_a_la_pared_en_can_felipa_resbalar_una_cosa.jpeg" alt="Imagen 34">
+                <img src="img/fototeca/Mariusz_Kruk.jpeg" alt="Imagen 35">
+                <img src="img/fototeca/no_soy_nadie_roni.jpeg" alt="Imagen 36">
+                <img src="img/fototeca/osmosis.jpg" alt="Imagen 37">
+                <img src="img/fototeca/par_de_roni.jpeg" alt="Imagen 38">
+                <img src="img/fototeca/potaje_de_habichuelas_al_sol.jpeg" alt="Imagen 39">
+                <img src="img/fototeca/pronous_detain_me_roni.jpeg" alt="Imagen 40">
+                <img src="img/fototeca/rama_cortada.jpeg" alt="Imagen 41">
+                <img src="img/fototeca/rama.jpeg" alt="Imagen 42">
+                <img src="img/fototeca/ramo_de_cerillas.jpeg" alt="Imagen 43">
+                <img src="img/fototeca/resbalar_(una_cosa)_en_can_felipa.jpeg" alt="Imagen 44">
+                <img src="img/fototeca/room_with_fives_de_manders.jpeg" alt="Imagen 45">
+                <img src="img/fototeca/Rachel_Whiteread's_Ear.jpeg" alt="Imagen 46">
+                <img src="img/fototeca/Roni_en_mi_libreta.jpeg" alt="Imagen 47">
+                <img src="img/fototeca/Roni_Horn.jpeg" alt="Imagen 48">
+                <img src="img/fototeca/tocino_de_manolo_en_la_cochera.jpeg" alt="Imagen 49">
+                <img src="img/fototeca/tokyo_love.jpeg" alt="Imagen 50">
+                <img src="img/fototeca/un_limon_como_mi_cabeza_de_grande.jpeg" alt="Imagen 51">
+                <img src="img/fototeca/vasito_agua_cerilla.jpeg" alt="Imagen 52">
+                <img src="img/fototeca/ventana_proyectada_en_azul.jpeg" alt="Imagen 53">
+                <img src="img/fototeca/we_don't_copy_we_match.jpeg" alt="Imagen 54">
+                <img src="img/fototeca/sentada_en_mis_pies.jpeg" alt="Imagen 55">
+            </section>
+    
+            <!-- Secciones de los proyectos -->
+            <section id="lubdub lubdub" class="project">
+                <img src="img/huevos fav.jpeg" alt="Proyecto 1 - Imagen 1">
+                <img src="img/taburetes ii movil.jpeg" alt="Proyecto 1 - Imagen 2">
+                <img src="img/diptico.jpeg" alt="Proyecto 1 - Imagen 3">
+                <img src="img/detalle piernitas collage.jpeg" alt="Proyecto 1 - Imagen 4">
+                <img src="img/detalle huevitos collage.jpeg" alt="Proyecto 1 - Imagen 5">
+                <img src="img/prueba sala huevos.jpeg" alt="Proyecto 1 - Imagen 6">
+            </section>
+    
+            <section id="lo que aquí reza" class="project">
+                <img src="img/favs_alraso/3 mitades de pera ii.jpg" alt="Proyecto 2 - Imagen 1">
+                <img src="img/favs_alraso/espacio negro cubico.png" alt="Proyecto 2 - Imagen 2">
+                <img src="img/favs_alraso/higo castrado de barro.jpg" alt="Proyecto 2 - Imagen 3">
+                <img src="img/favs_alraso/melon.jpg" alt="Proyecto 2 - Imagen 4">
+                <img src="img/favs_alraso/pimientos ventana.jpg" alt="Proyecto 2 - Imagen 5">
+                <img src="img/favs_alraso/mesa cole vertical.jpg" alt="Proyecto 2 - Imagen 6">
+                <img src="img/making off alraso.jpg" alt="Proyecto 2 - Imagen 7">
+            </section>
+    
+            <section id="it ain't much but it's nest" class="project">
+                <img src="img/nido/1·1.jpg" alt="Proyecto 3 - Imagen 1">
+                <img src="img/nido/making off nido.jpg" alt="Proyecto 3 - Imagen 2">
+                <img src="img/nido/general.jpg" alt="Proyecto 3 - Imagen 3">
+                <img src="img/nido/manta detalle.jpg" alt="Proyecto 3 - Imagen 4">
+                <h3>it ain't much but it's nest</h3>
+                <li>2022</li>
+                <li>tartas de barro, manta, novios</li>
+
+                <h3><li>
+                    Lugar para arrancarse y comerse las postillas secas. La necesidad de un perro por restregarse en
+                    la birria negra que hace doce días era algo y que ahora sólo es algo muerto. Lugar para hacerse
+                    una cruz con la uña en las ronchas de mosquito. Aquello que pincha dentro del calcetín y que
+                    sólo sale cuando llegas a casa. Lugar para inventarme que tienes cuarenta y cinco lunares entre
+                    nuca y sacro. El salitre blanco que mancha y circunda la birria muerta donde se restriega el perro.
+                    Lugar para llenarse los bolsillos de cosas que duran poco. La mancha marrón en forma de nube
+                    que une el calcetín a lo que pinchaba. Lugar para poner en fila todo lo que había flotando en el
+                    bebedero. El surco de hierba quemada donde ya no hay birria, pero que el perro sigue oliendo
+                    con ansia. Lugar para quedarse quieto y callado hasta escucharse el corazón. El calcetín que ya
+                    limpio, sigue picando y sigue pinchando.
+
+                    El trabajo de Nana no es ni nostálgico ni oracular; ni adviene ni extraña. Se ve tocando y se toca
+                    viendo, del mismo modo en que un sabor recuerda formas perdidas en la parte cerebral, -cuyo
+                    nombre desconozco-, que almacena los recuerdos. Su escultura invita a volverse horizontal, de
+                    manera que todo quede más cerca y se impregne lo uno de lo otro, formando un algo que sólo
+                    podríamos ser nosotros. Nana apela un mundo sinónimo de empatía y tacto que siempre ha
+                    estado aquí: cerca para sentirlo y lejos para buscarlo.</li>
+                
+                    <li>Texto de C. Martín</li> </h3>
+            </section>
+    
+            <section id="tríada" class="project">
+                <img src="img/loyola/triada.jpg" alt="Proyecto 4 - Imagen 1">
+                <h3>tríada</h3>
+                <li>2022</li>
+                <li>espuertas de goma de 15L y leche</li>
+            </section>
+
+            <section id="aprender de las camadas" class="project">
+                <img src="img/lavadero aprender de las camadas/editadas mayo 23/_MG_9578.jpg" alt="Proyecto 5 - Imagen 1">
+                <img src="img/lavadero aprender de las camadas/lav general.jpg" alt="Proyecto 5 - Imagen 2">
+                <img src="img/lavadero aprender de las camadas/fregona.jpeg" alt="Proyecto 5 - Imagen 3">
+                <h3>aprender de las camadas</h3>
+                <li>2022</li>
+                <li>espuertas de goma y leche</li>
+
+                <h3><li>La irresistible tendencia de todas las cosas a vincularse entre ellas da cuenta
+                    de la presunta imposibilidad de que existan objetos que no sean ni vinculantes ni
+                    resultado de la vinculación. Palidece la noción convencional de vinculación por la que 
+                    se presuponen al menos dos elementos inmutables, independientes de la vinculación que 
+                    compongan tanto como de la que han resultado. Palidece la autonomía de los objetos.
+                    Se descubren mellados, humildes piezas de otra humildad  mayor e invisible por su grandeza; 
+                    los números cardinales se emborronan como reflejos sobre un río feroz. El problema de la 
+                    generosidad estriba en el mantenimiento de la paz a pesar de todo lo perdido
+                    en el acto rebosante. La pérdida es la moneda de la esperanza y la ganancia sucede siempre 
+                    a la deuda.
+                   
+                    En el departamento gris de lo humano, todos los protocolos de actuación social procuran homogeneizar
+                    la circulación de la linfa de los vínculos. Se achantan en la verdadera intimidad, en la que tiene lugar un tacto
+                    vergonzoso, a medias desvestido, entre lo irrisorio aprendido y las pulsiones arcanas que permitieron la
+                    supervivencia de nuestros ancestros.
+                    
+                    De existir dos objetos incapaz de vincularse, ¿chocarían, o se traspasarían como espectros?<li>
+                        
+                        <li>Texto de Juan Viedma Vega</li> </h3>
+
+                
+            </section>
+
+            <section id="espuertas siamesas" class="project">
+                <img src="img/capacitos_siameses/WhatsApp Image 2021-10-18 at 18.51.16.jpg" alt="Proyecto 6 - Imagen 1">
+                <h3>espuertas siamesas</h3>
+                <li>2022</li>
+                <li>espuertas de goma de 15L y arena</li>
+            </section>
+
+         <!-- Sección del CV (inicialmente oculta) -->
+             <section id="cv" class="cv-content">
+             <ul>
+                <li><h1>Natalia Ortega Orozco (Ronda, 2000)</h1></li>
+                    
+                <h3>ESTUDIOS</h3>
+                <li>2024/2025  Máster en Producción e Investigación Artística; UB</li>
+                <li>2022/2023  Erasmus+ Internship; Seventeen, Londres</li>
+                <li>2018/2023 Grado en Bellas Artes Universidad de Granada</li>
+                    
+                <h3>INDIVIDUALES</h3>
+                <li>2022 Lo que aquí reza alRaso22, f(olklore)• f(icción). Restábal, Granada, ES</li>
+                <li>2022 No es mucho pero es nido/ It ain't much but is nest. Espacio La Raíz, Granada, ES</li>
+                <li>2022 Aprender de las camadas/ Learn from the litter. Espacio Lavadero, Granada, ES</li>
+                    
+                <h3>COLECTIVAS</h3>
+                <li>2022 Shapes & Things, virtual exhibition</li>
+                <li>2022 Ruta de Exposiciones en alRaso22. Restábal, Granada, ES.</li>
+                <li>2022 No era lo único que podía imaginarse. Palacio de los Condes de Gabia, Granada, ES</li>
+                <li>2022 Artistas Emergentes 2022. Fundación Valentín de Madariaga. Universidad de Loyola. Sevilla, ES</li>
+                <li>2022 PATEA, derivas por librerías de Granada. Granada, ES</li>
+                <li>2021 Premios de creación Alonso Cano. Selección de Artes Visuales. Palacio del Almirante, Granada, ES</li>
+                <li>2021 Certamen de Artes Plásticas Diputación de Ourense, Ourense, ES</li>
+                <li>2021 Jondos 21. Sala Torreón, Palacio del Almirante, Granada, ES</li>
+                    
+                <h3>RESIDENCIAS · BECAS · PREMIOS</h3>
+                <li>Beques per a la creació artística Fundació Guash Coranty 2024/2025</li>
+                <li>Finalista II edición del Festival WE:NOW</li>
+                <li>Residencia Artística alRaso22. Folklore·Ficción</li>
+                <li>Finalista del premio de Escultura Fundación de Valentín de Madariaga</li>
+                <li>Selección de Artes Visuales Premios Alonso Cano</li>
+                    
+                <h3>OBRA EN COLECCIÓN</h3>
+                <li>Beca Dibujando la Música, Mapa incompleto de recuerdos sonoros. Cádiz. Obra en el Centro de Documentación Musical de Andalucía.</li>
+                    
+                <h3>EXPERIENCIA LABORAL · GRUPOS DE TRABAJO</h3>
+                <li>2023/2024 Gallery Assistant, Seventeen Gallery, Londres, UK</li>
+                <li>2022 Organización, Circuitos22, Granada, ES</li>
+                <li>2021/2022 Oficina EA, La Madraza, Granada, ES</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // 🔹 Alternar visibilidad del submenú
+            const workToggle = document.getElementById("work-toggle");
+            if (workToggle) {
+                workToggle.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const submenu = document.getElementById("proyectos-menu");
+                    if (submenu) submenu.classList.toggle("visible");
+                });
+            }
+    
+            // 🔹 Manejador de clic en los enlaces de los proyectos
+            const projectLinks = document.querySelectorAll(".project-link");
+            projectLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const projectId = this.dataset.project;
+                    const home = document.getElementById("home");
+                    const projects = document.querySelectorAll(".project");
+    
+                    if (home) home.style.display = "none";
+                    projects.forEach(project => project.style.display = "none");
+    
+                    const selectedProject = document.getElementById(projectId);
+                    if (selectedProject) selectedProject.style.display = "block";
+                });
+            });
+    
+            // 🔹 Alternar visibilidad del CV
+            const cvButton = document.getElementById("cv-btn");
+            if (cvButton) {
+                cvButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const cvSection = document.getElementById("cv");
+                    const homeSection = document.getElementById("home");
+                    const projects = document.querySelectorAll(".project");
+    
+                    if (cvSection) {
+                        if (cvSection.style.display === "block") {
+                            cvSection.style.display = "none";
+                            if (homeSection) homeSection.style.display = "block";
+                        } else {
+                            cvSection.style.display = "block";
+                            if (homeSection) homeSection.style.display = "none";
+                            projects.forEach(project => project.style.display = "none");
+                        }
+                    }
+                });
+            }
+    
+            // 🔹 Volver a la fototeca (página de inicio)
+            const homeButton = document.getElementById("home-btn");
+            if (homeButton) {
+                homeButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const cvSection = document.getElementById("cv");
+                    const homeSection = document.getElementById("home");
+                    const projects = document.querySelectorAll(".project");
+    
+                    if (homeSection) {
+                        homeSection.style.display = "block";
+                        if (!homeSection.classList.contains("gallery")) {
+                            homeSection.classList.add("gallery");
+                        }
+                    }
+                    if (cvSection) cvSection.style.display = "none";
+                    projects.forEach(project => project.style.display = "none");
+                });
+            }
+    
+            // 🔹 Tooltip para mostrar nombres de imágenes
+            let tooltip; // Variable para un solo tooltip
+    
+            document.querySelectorAll(".gallery img").forEach(img => {
+                img.addEventListener("mouseover", function (event) {
+                    if (!tooltip) {
+                        tooltip = document.createElement("div");
+                        tooltip.className = "image-tooltip";
+                        document.body.appendChild(tooltip);
+                    }
+                    tooltip.innerText = img.src.split('/').pop();
+                    tooltip.style.position = "absolute";
+                    tooltip.style.background = "rgba(0, 0, 0, 0.7)";
+                    tooltip.style.color = "white";
+                    tooltip.style.padding = "5px 10px";
+                    tooltip.style.borderRadius = "5px";
+                    tooltip.style.fontSize = "14px";
+                    tooltip.style.opacity = "1";
+                    tooltip.style.pointerEvents = "none";
+                    tooltip.style.left = event.pageX + 10 + "px";
+                    tooltip.style.top = event.pageY + 10 + "px";
+                });
+    
+                img.addEventListener("mousemove", function (event) {
+                    if (tooltip) {
+                        tooltip.style.left = event.pageX + 10 + "px";
+                        tooltip.style.top = event.pageY + 10 + "px";
+                    }
+                });
+    
+                img.addEventListener("mouseout", function () {
+                    if (tooltip) {
+                        tooltip.remove();
+                        tooltip = null;
+                    }
+                });
+            });
+    
+        });
+    </script>
+    
